@@ -22,3 +22,8 @@
 ## 2026-10-21 (Buttons wieder im Logo-Orange)
 - Buttons wieder in #FC6820 wie im Logo, Schrift auf den Buttons jetzt dunkel statt weiß (Kontrast 6:1, Barrierefreiheit bleibt 100). Hover #E2541A. Wunsch von Antoine.
 - Kleine orange Texte (Eyebrows, Links, Tags) bleiben im dunkleren Text-Orange #B9430B, weil helles Orange als Schrift auf Weiß durch den Kontrast-Test fällt.
+
+## 2026-10-21 (Orange-Prüfung aller Seiten)
+- Alle 10 Seiten im Browser geprüft: Buttons überall Logo-Orange #FC6820 mit dunkler Schrift, orange Schrift überall #B9430B, im Hero #FC6820.
+- Impressum und Datenschutz: Schriftzug "Projekt Navigation" im Header war orange (allgemeine Linkfarbe), jetzt schwarz wie auf allen anderen Seiten.
+- Datenschutz: Telefonnummer einheitlich geschrieben (+49 172 45 00 271), wie in Impressum und Startseite.
