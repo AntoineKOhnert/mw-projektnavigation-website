@@ -61,6 +61,8 @@ def block(s, text):
         graph.append({"@type": "Service", "@id": url + "#service", "name": s['service']['name'],
                       "serviceType": s['service']['typ'], "provider": {"@id": D + "/#org"},
                       "areaServed": {"@type": "Country", "name": "Deutschland"}, "url": url})
+    for x in s.get('extra', []):
+        graph.append(x)
     fq = faqs_aus(text)
     if fq:
         graph.append({"@type": "FAQPage", "@id": url + "#faq", "mainEntity": fq})

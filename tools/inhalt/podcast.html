@@ -1,0 +1,67 @@
+    <span class="eyebrow">Podcast</span>
+    <h1>Der Podcast für Ärztinnen und Ärzte mit eigener Praxis</h1>
+    <div class="lead">
+      <p>Im Medizinstudium lernen Sie, wie man Patienten behandelt.</p>
+      <p>Wie man eine Praxis wirtschaftlich führt, lernen Sie dort nicht. Genau darum geht es im Podcast von MW Projekt Navigation. Experte ist Joachim M. Werno. Er weiß, wo Praxen Geld verdienen und wo sie es verlieren.</p>
+    </div>
+
+    <div class="player" id="player">
+      <div class="player-hinweis">
+        <b>Podcast hier anhören</b>
+        <p>Mit Klick auf "Podcast laden" wird der Player von Spotify geladen. Dabei werden Daten wie Ihre IP-Adresse an Spotify übertragen. Mehr dazu in unserer <a href="/datenschutz#spotify">Datenschutzerklärung</a>.</p>
+        <div class="player-aktionen">
+          <button type="button" class="btn" id="player-laden">Podcast laden</button>
+          <a class="btn btn-ghost" href="https://open.spotify.com/show/33ZMDx0XCGybDV9m83RhDo" target="_blank" rel="noopener">Auf Spotify öffnen</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.getElementById('player-laden').addEventListener('click',function(){
+        var f=document.createElement('iframe');
+        f.src='https://open.spotify.com/embed/show/33ZMDx0XCGybDV9m83RhDo?utm_source=generator';
+        f.width='100%'; f.height='352'; f.loading='lazy'; f.title='MW-Projekt-Navigation Podcast auf Spotify';
+        f.allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+        f.style.border='0'; f.style.borderRadius='12px';
+        var p=document.getElementById('player'); p.innerHTML=''; p.classList.add('geladen'); p.appendChild(f);
+      });
+    </script>
+
+    <h2>Worum geht es im Podcast?</h2>
+    <p>Um die unternehmerische Seite einer Arztpraxis. Also um alles, was im Studium fehlt und im Praxisalltag trotzdem jeden Tag auf dem Tisch liegt:</p>
+    <ul>
+      <li>Praxisgründung und Praxisübernahme</li>
+      <li>Umbau und Erweiterung der Praxisräume</li>
+      <li>Personal</li>
+      <li>Finanzierung</li>
+      <li>Teure Geräte und wann sie sich rechnen</li>
+      <li>Der Wechsel von Kassen- zu Privatpatienten</li>
+    </ul>
+
+    <h2>Für wen ist der Podcast?</h2>
+    <p>Für Ärztinnen und Ärzte, die eine Praxis führen, übernehmen oder ausbauen wollen. Wer gerade vor einer Gründung steht, bekommt Antworten auf die Fragen, die man sich vorher stellen sollte. Wer schon eine Praxis hat, erfährt, wo im Betrieb Geld liegen bleibt.</p>
+
+    <h2>Wer spricht im Podcast?</h2>
+    <p>Joachim M. Werno ist Geschäftsführer der MW Projekt Navigation GmbH. Er hat unter anderem die Konzeption und Planung aller medizinisch genutzten Flächen im Arztquartier Überseestadt in Bremen verantwortet, einem Gesundheitszentrum mit Platz für bis zu 16 Facharztpraxen. Mehr zu diesem Projekt finden Sie in unseren <a href="/referenzen">Referenzen</a>.</p>
+    <p>Wenn Sie eine Praxis oder ein Ärztezentrum planen, lesen Sie auch unsere Seite zur <a href="/projektsteuerung-aerztezentrum">Projektsteuerung für Ärztezentren und Arztpraxen</a>.</p>
+
+    <h2>Häufige Fragen zum Podcast</h2>
+    <div class="faqs">
+      <details class="faq">
+        <summary>Wo kann ich den Podcast hören?</summary>
+        <div><p>Auf Spotify unter dem Namen "MW-Projekt-Navigation". Sie können ihn direkt hier auf der Seite abspielen, nachdem Sie den Player geladen haben, oder ihn in der Spotify-App öffnen.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Kostet der Podcast etwas?</summary>
+        <div><p>Nein. Der Podcast ist kostenlos.</p></div>
+      </details>
+      <details class="faq">
+        <summary>Kann ich eine Frage für eine Folge einreichen?</summary>
+        <div><p>Schreiben Sie uns über das Formular unten oder an <a href="mailto:info@mw-projekt-navigation.com">info@mw-projekt-navigation.com</a>. Fragen aus dem Praxisalltag sind uns willkommen.</p></div>
+      </details>
+    </div>
+
+    <div class="cta-box">
+      <h2>Sie planen eine Praxis oder ein Ärztezentrum?</h2>
+      <p>Im kostenlosen Erstgespräch sagen wir Ihnen, was auf Sie zukommt und ob wir der richtige Partner sind.</p>
+      <a href="#anfrage" class="btn">Erstgespräch vereinbaren</a>
+    </div>

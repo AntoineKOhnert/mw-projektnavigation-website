@@ -86,6 +86,32 @@
       "prio": "0.8"
     },
     {
+      "datei": "podcast.html",
+      "pfad": "/podcast",
+      "name": "Podcast",
+      "title": "Podcast für Ärzte: Praxis führen | MW Projekt Navigation",
+      "description": "Der Podcast für Ärztinnen und Ärzte mit eigener Praxis: Gründung, Übernahme, Umbau, Personal, Finanzierung und Geräte. Experte ist Joachim M. Werno.",
+      "sitemap": true,
+      "prio": "0.7",
+      "extra": [
+        {
+          "@type": "PodcastSeries",
+          "@id": "https://mw-projekt-navigation.com/podcast#podcast",
+          "name": "MW-Projekt-Navigation",
+          "url": "https://open.spotify.com/show/33ZMDx0XCGybDV9m83RhDo",
+          "inLanguage": "de-DE",
+          "description": "Podcast über die unternehmerische Seite einer Arztpraxis: Gründung, Übernahme, Umbau, Personal, Finanzierung, Geräte und der Wechsel von Kassen- zu Privatpatienten.",
+          "publisher": {
+            "@id": "https://mw-projekt-navigation.com/#org"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Joachim M. Werno"
+          }
+        }
+      ]
+    },
+    {
       "datei": "ueber-uns.html",
       "pfad": "/ueber-uns",
       "name": "Über uns",

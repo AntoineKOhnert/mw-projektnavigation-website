@@ -11,3 +11,10 @@
 - Neue Seiten /projektsteuerung-aerztezentrum und /projektsteuerung-gewerbebau (je rund 1.200 Wörter, mit FAQ). Wunsch von Antoine.
 - Über uns: Absatz Geschäftsführung (nur Namen und belegte Fakten, Fotos und Werdegang folgen).
 - Leistungsseite inhaltlich unverändert (Wunsch von Antoine), nur Technik und Footer.
+
+## 2026-10-21 (Podcast-Seite, graue Projektkarte, PageSpeed Barrierefreiheit)
+- Neue Seite /podcast mit dem Spotify-Podcast "MW-Projekt-Navigation" (Experte Joachim M. Werno). Player als 2-Klick-Lösung: Spotify lädt erst nach Klick auf "Podcast laden". Podcast in Navigation, Footer, Sitemap und Schema (PodcastSeries). Wunsch von Antoine.
+- Datenschutzerklärung: neuer Abschnitt 7 "Podcast-Player von Spotify", Hinweis im Cookie-Abschnitt, folgende Abschnitte neu nummeriert (8 bis 11).
+- Startseite: Projektkarte Arztquartier Bremen grau statt schwarz, wie der Kasten "Planung von innen nach außen" auf der Referenzseite. Wunsch von Antoine.
+- PageSpeed Barrierefreiheit (Handy 92): Orange als Textfarbe und auf Buttons dunkler (tools/farben.py, Kontrast nach WCAG AA), Signal-Orange bleibt für Flächen, Icons und im Hero. Menü-Button mit unsichtbarem Text statt unzulässigem aria-label. Phasen-Nummern 01 bis 04 als Deko markiert. Lokal geprüft: Barrierefreiheit, Best Practices und SEO je 100.
+- Navigation bricht auf mittleren Bildschirmbreiten nicht mehr um.

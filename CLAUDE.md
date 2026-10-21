@@ -14,7 +14,7 @@ Kunde von Antoine Kohnert (AK Media). Hosting: united-domains Webspace, Ordner `
 ## Pflicht bei jeder Änderung
 - Eintrag in `docs/changelog.md` im selben Commit, sonst bricht der Upload ab.
 - Titel, Description, Canonical, OG und Schema nie von Hand im `<head>` ändern: `tools/seiten.json` anpassen, dann `python3 tools/seo.py` (schreibt den Block zwischen `<!-- SEO:START -->` und `<!-- SEO:END -->` und die sitemap.xml). Danach `python3 tools/seo.py --check`.
-- Neue Seite: Inhalt als `tools/inhalt/<slug>.html`, dann `python3 tools/neue_seite.py tools/inhalt/<slug>.html`, Eintrag in `tools/seiten.json`, `python3 tools/seo.py`. Die zwei Schwerpunktseiten und 404 werden so gebaut: Text dort ändern, nicht in www/.
+- Neue Seite: Inhalt als `tools/inhalt/<slug>.html`, dann `python3 tools/neue_seite.py tools/inhalt/<slug>.html`, Eintrag in `tools/seiten.json`, dann `python3 tools/farben.py` und `python3 tools/seo.py`. Neue Seite auch in Navigation und Footer aller Seiten eintragen. Die zwei Schwerpunktseiten und 404 werden so gebaut: Text dort ändern, nicht in www/.
 - FAQ immer als `<details class="faq"><summary>Frage</summary><div><p>Antwort</p></div></details>`, das FAQ-Schema entsteht daraus automatisch.
 - .htaccess vor dem Push lokal auf Apache testen (Skill htaccess-https).
 
@@ -24,3 +24,5 @@ Kunde von Antoine Kohnert (AK Media). Hosting: united-domains Webspace, Ordner `
 - Keine erfundenen Fakten, Zahlen, Projekte oder Personen-Details. Belegt ist nur, was in referenzen.html und ueber-uns.html steht. Zum Team (Maximilian F. Lux, Joachim M. Werno) gibt es noch keine Fotos und Werdegänge.
 - Schreibregeln: erster Satz kurz, keine KI-Floskeln ("entscheidend", "ganzheitlich", "nicht nur X sondern Y", "Landschaft"), gerade Anführungszeichen, echte Umlaute, maximal ein Gedankenstrich pro Absatz, keine Emojis.
 - Kein aggregateRating im Schema.
+- Farben: Orange als Textfarbe immer `var(--orange-text)`, Buttons `var(--orange-btn)` (Kontrast WCAG AA). `#FC6820` nur für Flächen, Icons und auf dunklem Grund.
+- Externe Einbettungen (Spotify, YouTube, Karten) nur als 2-Klick-Lösung und mit Abschnitt in der Datenschutzerklärung.
