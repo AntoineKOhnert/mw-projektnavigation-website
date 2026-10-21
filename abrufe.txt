@@ -1,0 +1,213 @@
+A-Record: 217.160.0.12  www: 217.160.0.12
+=== http://mw-projekt-navigation.com/
+Status 301 | Ziel: https://mw-projekt-navigation.com/ | Zeit: 0.381317s | TTFB: 0.381143s | GrÃ¶ÃŸe: 162
+Server: nginx
+Content-Type: text/html
+Expires: Wed, 21 Oct 2026 10:52:22 GMT
+Cache-Control: max-age=1200
+<html> <head><title>301 Moved Permanently</title></head> <body> <center><h1>301 Moved Permanently</h1></center> <hr><center>nginx</center> </body> </html> 
+=== http://www.mw-projekt-navigation.com/
+Status 301 | Ziel: https://www.mw-projekt-navigation.com/ | Zeit: 0.388755s | TTFB: 0.388611s | GrÃ¶ÃŸe: 162
+Server: nginx
+Content-Type: text/html
+Expires: Wed, 21 Oct 2026 10:52:22 GMT
+Cache-Control: max-age=1200
+<html> <head><title>301 Moved Permanently</title></head> <body> <center><h1>301 Moved Permanently</h1></center> <hr><center>nginx</center> </body> </html> 
+=== https://mw-projekt-navigation.com/
+Status 200 | Ziel:  | Zeit: 0.796612s | TTFB: 0.577392s | GrÃ¶ÃŸe: 49449
+content-type: text/html
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+cache-control: max-age=3600
+expires: Wed, 21 Oct 2026 11:32:23 GMT
+<!DOCTYPE html> <html lang="de"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- SEO:START (wird von tools/seo.py erzeugt, nicht von Hand Ã¤nd
+=== https://www.mw-projekt-navigation.com/
+Status 301 | Ziel: https://mw-projekt-navigation.com/ | Zeit: 0.502311s | TTFB: 0.501998s | GrÃ¶ÃŸe: 282
+content-type: text/html; charset=iso-8859-1
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+cache-control: max-age=3600
+expires: Wed, 21 Oct 2026 11:32:23 GMT
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> <html><head> <title>301 Moved Permanently</title> </head><body> <h1>Moved Permanently</h1> <p>The document ha
+=== https://mw-projekt-navigation.com/index.html
+Status 301 | Ziel: https://mw-projekt-navigation.com/ | Zeit: 0.512321s | TTFB: 0.511959s | GrÃ¶ÃŸe: 282
+content-type: text/html; charset=iso-8859-1
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+cache-control: max-age=3600
+expires: Wed, 21 Oct 2026 11:32:24 GMT
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> <html><head> <title>301 Moved Permanently</title> </head><body> <h1>Moved Permanently</h1> <p>The document ha
+=== https://mw-projekt-navigation.com/leistungen
+Status 200 | Ziel:  | Zeit: 0.641334s | TTFB: 0.544818s | GrÃ¶ÃŸe: 17938
+content-type: text/html
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+cache-control: max-age=3600
+expires: Wed, 21 Oct 2026 11:32:24 GMT
+<!DOCTYPE html> <html lang="de"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- SEO:START (wird von tools/seo.py erzeugt, nicht von Hand Ã¤nd
+=== https://mw-projekt-navigation.com/leistungen.html
+Status 301 | Ziel: https://mw-projekt-navigation.com/leistungen | Zeit: 0.505536s | TTFB: 0.505270s | GrÃ¶ÃŸe: 292
+content-type: text/html; charset=iso-8859-1
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+cache-control: max-age=3600
+expires: Wed, 21 Oct 2026 11:32:25 GMT
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> <html><head> <title>301 Moved Permanently</title> </head><body> <h1>Moved Permanently</h1> <p>The document ha
+=== https://mw-projekt-navigation.com/leistungen/
+Status 301 | Ziel: https://mw-projekt-navigation.com/leistungen | Zeit: 0.518700s | TTFB: 0.518442s | GrÃ¶ÃŸe: 292
+content-type: text/html; charset=iso-8859-1
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+cache-control: max-age=3600
+expires: Wed, 21 Oct 2026 11:32:26 GMT
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> <html><head> <title>301 Moved Permanently</title> </head><body> <h1>Moved Permanently</h1> <p>The document ha
+=== https://mw-projekt-navigation.com/ueber-uns
+Status 200 | Ziel:  | Zeit: 0.652455s | TTFB: 0.549789s | GrÃ¶ÃŸe: 23731
+content-type: text/html
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+cache-control: max-age=3600
+expires: Wed, 21 Oct 2026 11:32:26 GMT
+<!DOCTYPE html> <html lang="de"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- SEO:START (wird von tools/seo.py erzeugt, nicht von Hand Ã¤nd
+=== https://mw-projekt-navigation.com/referenzen
+Status 200 | Ziel:  | Zeit: 0.686665s | TTFB: 0.557546s | GrÃ¶ÃŸe: 25326
+content-type: text/html
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+cache-control: max-age=3600
+expires: Wed, 21 Oct 2026 11:32:27 GMT
+<!DOCTYPE html> <html lang="de"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- SEO:START (wird von tools/seo.py erzeugt, nicht von Hand Ã¤nd
+=== https://mw-projekt-navigation.com/impressum
+Status 200 | Ziel:  | Zeit: 0.653203s | TTFB: 0.555936s | GrÃ¶ÃŸe: 17655
+content-type: text/html
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+cache-control: max-age=3600
+expires: Wed, 21 Oct 2026 11:32:27 GMT
+<!DOCTYPE html> <html lang="de"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- SEO:START (wird von tools/seo.py erzeugt, nicht von Hand Ã¤nd
+=== https://mw-projekt-navigation.com/datenschutz
+Status 200 | Ziel:  | Zeit: 0.649872s | TTFB: 0.543737s | GrÃ¶ÃŸe: 21227
+content-type: text/html
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+cache-control: max-age=3600
+expires: Wed, 21 Oct 2026 11:32:28 GMT
+<!DOCTYPE html> <html lang="de"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- SEO:START (wird von tools/seo.py erzeugt, nicht von Hand Ã¤nd
+=== https://mw-projekt-navigation.com/projektsteuerung-aerztezentrum
+Status 200 | Ziel:  | Zeit: 0.684205s | TTFB: 0.542335s | GrÃ¶ÃŸe: 30745
+content-type: text/html
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+cache-control: max-age=3600
+expires: Wed, 21 Oct 2026 11:32:29 GMT
+<!DOCTYPE html> <html lang="de"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- SEO:START (wird von tools/seo.py erzeugt, nicht von Hand Ã¤nd
+=== https://mw-projekt-navigation.com/projektsteuerung-gewerbebau
+Status 200 | Ziel:  | Zeit: 0.689902s | TTFB: 0.559559s | GrÃ¶ÃŸe: 30465
+content-type: text/html
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+cache-control: max-age=3600
+expires: Wed, 21 Oct 2026 11:32:30 GMT
+<!DOCTYPE html> <html lang="de"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- SEO:START (wird von tools/seo.py erzeugt, nicht von Hand Ã¤nd
+=== https://mw-projekt-navigation.com/projektsteuerung-gewerbebau.html
+Status 301 | Ziel: https://mw-projekt-navigation.com/projektsteuerung-gewerbebau | Zeit: 0.502844s | TTFB: 0.502563s | GrÃ¶ÃŸe: 309
+content-type: text/html; charset=iso-8859-1
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+cache-control: max-age=3600
+expires: Wed, 21 Oct 2026 11:32:30 GMT
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> <html><head> <title>301 Moved Permanently</title> </head><body> <h1>Moved Permanently</h1> <p>The document ha
+=== https://mw-projekt-navigation.com/kontakt.php
+Status 302 | Ziel: https://mw-projekt-navigation.com/ | Zeit: 0.634975s | TTFB: 0.634864s | GrÃ¶ÃŸe: 0
+content-type: text/html; charset=UTF-8
+server: Apache
+
+=== https://mw-projekt-navigation.com/robots.txt
+Status 200 | Ziel:  | Zeit: 0.509461s | TTFB: 0.509326s | GrÃ¶ÃŸe: 395
+content-type: text/plain
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+# mw-projekt-navigation.com # Suchmaschinen und KI-Assistenten (ChatGPT, Claude, Perplexity, Gemini) dÃ¼rfen alles lesen. User-agent: * Allow: / Disallow: /kontakt.php  User-agent: GPTBot Allow: /  Us
+=== https://mw-projekt-navigation.com/sitemap.xml
+Status 200 | Ziel:  | Zeit: 0.516809s | TTFB: 0.516539s | GrÃ¶ÃŸe: 987
+content-type: application/xml
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+<?xml version="1.0" encoding="UTF-8"?> <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">   <url><loc>https://mw-projekt-navigation.com/</loc><lastmod>2026-10-21</lastmod><priority>1.0</prio
+=== https://mw-projekt-navigation.com/gibt-es-nicht
+Status 404 | Ziel:  | Zeit: 0.657724s | TTFB: 0.559843s | GrÃ¶ÃŸe: 17944
+content-type: text/html
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+<!DOCTYPE html> <html lang="de"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- SEO:START (wird von tools/seo.py erzeugt, nicht von Hand Ã¤nd
+=== https://mw-projekt-navigation.com/google3271cafb32c8877b.html
+Status 200 | Ziel:  | Zeit: 0.506309s | TTFB: 0.506035s | GrÃ¶ÃŸe: 53
+content-type: text/html
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+cache-control: max-age=3600
+expires: Wed, 21 Oct 2026 11:32:33 GMT
+google-site-verification: google3271cafb32c8877b.html
+=== https://mw-projekt-navigation.com/htaccess.txt
+Status 404 | Ziel:  | Zeit: 0.664634s | TTFB: 0.572792s | GrÃ¶ÃŸe: 17944
+content-type: text/html
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+<!DOCTYPE html> <html lang="de"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- SEO:START (wird von tools/seo.py erzeugt, nicht von Hand Ã¤nd
+=== https://mw-projekt-navigation.com/assets/logo-full.svg
+Status 200 | Ziel:  | Zeit: 0.529689s | TTFB: 0.529403s | GrÃ¶ÃŸe: 4241
+content-type: image/svg+xml
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+cache-control: max-age=31536000
+expires: Thu, 21 Oct 2027 10:32:34 GMT
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> <svg width="100%" height="100%" viewBox="0 0 1
+=== https://mw-projekt-navigation.com/assets/logo-mark.svg
+Status 200 | Ziel:  | Zeit: 0.520484s | TTFB: 0.520198s | GrÃ¶ÃŸe: 3664
+content-type: image/svg+xml
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+cache-control: max-age=31536000
+expires: Thu, 21 Oct 2027 10:32:35 GMT
+<?xml version='1.0' encoding='UTF-8'?> <svg xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" width="100%" height="100%" viewBox="194.38 220.99 694.02 536.00" version="1.1" xml:sp
+=== https://mw-projekt-navigation.com/assets/mw-entwicklung.webp
+Status 200 | Ziel:  | Zeit: 0.505443s | TTFB: 0.505146s | GrÃ¶ÃŸe: 4408
+content-type: image/webp
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+cache-control: max-age=31536000
+expires: Thu, 21 Oct 2027 10:32:35 GMT
+RIFF0  WEBPVP8 $  ĞM *ğ ğ >=ŒD"!¡“¹˜ Ä¦ï)ïŒ+bWï?Òü	=¯kü»ş½ï£bş¿ıõ¿8q•öÚOØÿZşóû¡ó§ùïë¹/ÑÀ¥ <À~Ë~Ú{¶ÿ©ıu÷ûaìügıwÿÿh?ø~Á_ä¿Üÿÿ÷ı‰ôÑıåøYşÍÿ‡ÓKU'Ğá»mÿ-ı/öÄ‡Í?†üŒİÖÔ›â¿h~ûøûÊ_ /ÆŸ„ü¿à™ 
+=== https://mw-projekt-navigation.com/assets/arztquartier-aussen.webp
+Status 200 | Ziel:  | Zeit: 0.869893s | TTFB: 0.590162s | GrÃ¶ÃŸe: 77372
+content-type: image/webp
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+cache-control: max-age=31536000
+expires: Thu, 21 Oct 2027 10:32:36 GMT
+RIFF4. WEBPVP8 (. Ğ$*kŸ>=‹D"!¡4 Ä²¥ö»g¥³‚Õèïúë“ë×·è¿åŸ/£¿ıŞãş£ÿœÀw¯ÿ¿ëÇúŸûÿTß>¾¬ÿ¦y£áõHómô`êŞ¡0ò'óş´|†{÷ßóï¿Ã{“ã¯ßú?Óú‹üãñ_í¿Çşîÿ˜ù±ıüÿó”^•üˆÿ+üúoı?æşBÿ+ş—şkûÇî÷ø?ßÊÿÏş÷şGƒ®óş¿
+=== https://mw-projekt-navigation.com/assets/arztquartier-strasse.webp
+Status 200 | Ziel:  | Zeit: 0.780736s | TTFB: 0.572907s | GrÃ¶ÃŸe: 49338
+content-type: image/webp
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+cache-control: max-age=31536000
+expires: Thu, 21 Oct 2027 10:32:37 GMT
+RIFF²À  WEBPVP8 ¦À  03*2h>=‹C¢!¡Ùf€ Ä³¶9Ñ¢)÷ş§9—ïyëöb†}Êı“g¹w´ôßÍãÕwõßI^hŞpıØŸİ­k|óøßõÿ‘hù|øÇïŸçëÿ—÷Eÿ·½ï]íôúåæ”ö±ı/ıŸó?•”ü ÿKıå×È_æßÖ¿ÖÿuüœøÀü/üÿé¿×x:ïê¿õÿ¯ööÿíó¿ÈşR|bşWşö>®
+=== https://mw-projekt-navigation.com/assets/fonts/inter-var-latin.woff2
+Status 200 | Ziel:  | Zeit: 0.767207s | TTFB: 0.580278s | GrÃ¶ÃŸe: 48256
+content-type: font/woff2
+server: Apache
+referrer-policy: strict-origin-when-cross-origin
+cache-control: max-age=31536000
+expires: Thu, 21 Oct 2027 10:32:38 GMT
+wOF2     ¼€    à   ¼                       †^‚²DÕp?HVAR‹i?MVAR^`?STATN'& …6/l »@¡ˆ 0‚œ>6$ †.¡[sÍ‘B¼ÏîíÃljP¥Û€Ê©³Rû¯p7w¤pºRwuc÷QÆT°]=¸àâ¾³ÕìÿÿÿÿÏN&cŒn³n€€†•Yÿÿ Qº›GÊ¥–
+=== SSL
+subject=CN = mw-projekt-navigation.com
+issuer=C = GB, O = Sectigo Limited, CN = Sectigo Public Server Authentication CA DV R36
+notBefore=Aug 18 00:00:00 2026 GMT
+notAfter=Feb 24 23:59:59 2027 GMT
+X509v3 Subject Alternative Name: 
+    DNS:mw-projekt-navigation.com, DNS:www.mw-projekt-navigation.com
+=== gzip
+content-encoding: gzip

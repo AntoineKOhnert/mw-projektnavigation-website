@@ -1,0 +1,41 @@
+
+===== mobil.json
+largest-contentful-paint: 1,6 s
+cumulative-layout-shift: 0
+total-blocking-time: 170 ms
+first-contentful-paint: 1,4 s
+speed-index: 2,3 s
+server-response-time: Stammdokument brauchte 230 ms
+
+## Leistung: 97
+- [max-potential-fid] Maximaler potenzieller First Input Delay | 250 ms
+
+## Barrierefreiheit: 96
+- [color-contrast] Das Kontrastverhältnis von Hintergrund- und Vordergrundfarben ist nicht ausreichend. | 0
+    • {"node":{"type":"node","lhId":"1-0-SPAN","path":"1,HTML,1,BODY,5,SECTION,0,DIV,0,DIV,0,SPAN","selector":"section#leistungen > div.wrap > div.section-head > span.eyebrow","boundingRect":{"top":1281,"bottom":1296,"left":28,"right":139,"width":111,"heig
+    • {"node":{"type":"node","lhId":"1-2-A","path":"1,HTML,1,BODY,5,SECTION,0,DIV,1,DIV,0,DIV,4,A","selector":"div.wrap > div.pillars > div.pillar > a.pillar-more","boundingRect":{"top":2237,"bottom":2293,"left":63,"right":349,"width":286,"height":56},"sni
+    • {"node":{"type":"node","lhId":"1-4-A","path":"1,HTML,1,BODY,5,SECTION,0,DIV,1,DIV,1,DIV,4,A","selector":"div.wrap > div.pillars > div.pillar > a.pillar-more","boundingRect":{"top":2924,"bottom":2980,"left":63,"right":349,"width":286,"height":56},"sni
+
+## Best Practices: 100
+
+## SEO: 100
+
+===== desktop.json
+largest-contentful-paint: 0,6 s
+cumulative-layout-shift: 0,007
+total-blocking-time: 0 ms
+first-contentful-paint: 0,5 s
+speed-index: 0,9 s
+server-response-time: Stammdokument brauchte 230 ms
+
+## Leistung: 100
+
+## Barrierefreiheit: 96
+- [color-contrast] Das Kontrastverhältnis von Hintergrund- und Vordergrundfarben ist nicht ausreichend. | 0
+    • {"node":{"type":"node","lhId":"1-0-SPAN","path":"1,HTML,1,BODY,5,SECTION,0,DIV,0,DIV,0,SPAN","selector":"section#leistungen > div.wrap > div.section-head > span.eyebrow","boundingRect":{"top":1163,"bottom":1178,"left":126,"right":237,"width":111,"hei
+    • {"node":{"type":"node","lhId":"1-2-A","path":"1,HTML,1,BODY,5,SECTION,0,DIV,1,DIV,0,DIV,4,A","selector":"div.wrap > div.pillars > div.pillar > a.pillar-more","boundingRect":{"top":1848,"bottom":1876,"left":161,"right":463,"width":302,"height":28},"sn
+    • {"node":{"type":"node","lhId":"1-4-A","path":"1,HTML,1,BODY,5,SECTION,0,DIV,1,DIV,1,DIV,4,A","selector":"div.wrap > div.pillars > div.pillar > a.pillar-more","boundingRect":{"top":1848,"bottom":1876,"left":717,"right":1013,"width":296,"height":28},"s
+
+## Best Practices: 100
+
+## SEO: 100
