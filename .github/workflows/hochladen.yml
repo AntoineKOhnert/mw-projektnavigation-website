@@ -1,0 +1,52 @@
+name: Dateien nach www hochladen
+
+# Lädt alles aus dem Ordner upload/ in den Ordner www auf dem Server.
+# Neue und geänderte Dateien werden hochgeladen, auf dem Server wird nichts gelöscht.
+on:
+  push:
+    branches: [main]
+    paths: ['upload/**', '.github/workflows/hochladen.yml']
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+env:
+  SERVER_DIR: www
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    env:
+      FTP_SERVER: ${{ secrets.FTP_SERVER }}
+      FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      FTP_PORT: ${{ secrets.FTP_PORT }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: lftp installieren
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Per SFTP hochladen
+        run: |
+          HOST="${FTP_SERVER#sftp://}"; HOST="${HOST#ftp://}"; HOST="${HOST%/}"; HOST="${HOST%%:*}"
+          PORT="${FTP_PORT:-22}"
+          echo "HOST=$HOST" >> "$GITHUB_ENV"; echo "PORT=$PORT" >> "$GITHUB_ENV"
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "sftp://$HOST:$PORT" -e "
+          set sftp:auto-confirm yes; set net:max-retries 3; set cmd:fail-exit yes;
+          mirror -R --verbose=1 upload/ $SERVER_DIR/;
+          bye"
+
+      - name: Hochgeladene Dateien auf dem Server gegenprüfen
+        run: |
+          mkdir -p zurueck
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "sftp://$HOST:$PORT" -e "
+          set sftp:auto-confirm yes; set net:max-retries 3; set cmd:fail-exit yes;
+          mirror $SERVER_DIR/ zurueck/ --include-glob google*.html;
+          bye"
+          for f in upload/*; do
+            n=$(basename "$f")
+            cmp -s "$f" "zurueck/$n" && echo "OK: $n liegt auf dem Server" || { echo "::error::$n fehlt oder weicht ab"; exit 1; }
+          done
