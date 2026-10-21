@@ -27,3 +27,7 @@
 - Alle 10 Seiten im Browser geprüft: Buttons überall Logo-Orange #FC6820 mit dunkler Schrift, orange Schrift überall #B9430B, im Hero #FC6820.
 - Impressum und Datenschutz: Schriftzug "Projekt Navigation" im Header war orange (allgemeine Linkfarbe), jetzt schwarz wie auf allen anderen Seiten.
 - Datenschutz: Telefonnummer einheitlich geschrieben (+49 172 45 00 271), wie in Impressum und Startseite.
+
+## 2026-10-21 (Nur noch ein Orange)
+- Das dunklere Text-Orange (#B9430B) und das Hover-Orange (#E2541A) sind überall entfernt. Schrift, Links, Tags, Kennzahlen, Buttons und Hover nutzen jetzt nur noch das Logo-Orange #FC6820 (tools/farben.py). Im Browser auf allen 10 Seiten geprüft. Wunsch von Antoine.
+- Hinweis: Orange als Schrift auf Weiß hat einen Kontrast von 2,9:1. PageSpeed zieht dafür bei Barrierefreiheit Punkte ab, auf das Ranking hat das kaum Einfluss.

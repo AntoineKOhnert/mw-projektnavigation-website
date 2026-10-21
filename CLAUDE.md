@@ -24,5 +24,5 @@ Kunde von Antoine Kohnert (AK Media). Hosting: united-domains Webspace, Ordner `
 - Keine erfundenen Fakten, Zahlen, Projekte oder Personen-Details. Belegt ist nur, was in referenzen.html und ueber-uns.html steht. Zum Team (Maximilian F. Lux, Joachim M. Werno) gibt es noch keine Fotos und Werdegänge.
 - Schreibregeln: erster Satz kurz, keine KI-Floskeln ("entscheidend", "ganzheitlich", "nicht nur X sondern Y", "Landschaft"), gerade Anführungszeichen, echte Umlaute, maximal ein Gedankenstrich pro Absatz, keine Emojis.
 - Kein aggregateRating im Schema.
-- Farben: Orange als Textfarbe immer `var(--orange-text)`, Buttons `var(--orange-btn)` = Logo-Orange #FC6820 mit dunkler Schrift (Kontrast WCAG AA). `#FC6820` nur für Flächen, Icons und auf dunklem Grund.
+- Farben: Es gibt nur ein Orange, das Logo-Orange #FC6820 (Wunsch Antoine 21.10.2026). Gilt für Buttons, Schrift, Links, Icons und Flächen. Kein dunkleres Zweit-Orange, auch nicht für Hover. Button-Schrift dunkel (var(--ink)). Nach jeder CSS-Änderung `python3 tools/farben.py` laufen lassen.
 - Externe Einbettungen (Spotify, YouTube, Karten) nur als 2-Klick-Lösung und mit Abschnitt in der Datenschutzerklärung.
