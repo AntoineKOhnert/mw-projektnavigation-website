@@ -1,0 +1,60 @@
+name: Verbindungstest Server
+
+# Loggt sich per SFTP ein und prüft den Ordner www. Ändert nichts auf dem Server.
+# Läuft auf Knopfdruck (Actions > Run workflow) und wenn sich diese Datei ändert.
+# Das Repo ist öffentlich: deshalb werden hier bewusst keine Datei- oder Ordnernamen vom Server ausgegeben.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/verbindungstest.yml']
+
+env:
+  SERVER_DIR: www
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      FTP_SERVER: ${{ secrets.FTP_SERVER }}
+      FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      FTP_PORT: ${{ secrets.FTP_PORT }}
+    steps:
+      - name: Secret FTP_SERVER vorhanden
+        run: '[ -n "$FTP_SERVER" ] || { echo "::error::Secret FTP_SERVER fehlt."; exit 1; }'
+      - name: Secret FTP_USERNAME vorhanden
+        run: '[ -n "$FTP_USERNAME" ] || { echo "::error::Secret FTP_USERNAME fehlt."; exit 1; }'
+      - name: Secret FTP_PASSWORD vorhanden
+        run: '[ -n "$FTP_PASSWORD" ] || { echo "::error::Secret FTP_PASSWORD fehlt."; exit 1; }'
+
+      - name: lftp installieren
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Server erreichbar
+        run: |
+          HOST="${FTP_SERVER#sftp://}"; HOST="${HOST#ftp://}"; HOST="${HOST%/}"; HOST="${HOST%%:*}"
+          PORT="${FTP_PORT:-22}"
+          echo "HOST=$HOST" >> "$GITHUB_ENV"; echo "PORT=$PORT" >> "$GITHUB_ENV"
+          timeout 15 bash -c "</dev/tcp/$HOST/$PORT" || { echo "::error::Server antwortet nicht auf Port $PORT."; exit 1; }
+
+      - name: SFTP-Login
+        run: |
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "sftp://$HOST:$PORT" -e "
+          set sftp:auto-confirm yes; set net:max-retries 2; set net:timeout 20; set cmd:fail-exit yes;
+          cls > /dev/null; bye" || { echo "::error::Login fehlgeschlagen (Benutzer/Passwort/Server prüfen)."; exit 1; }
+
+      - name: Ordner www vorhanden
+        run: |
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "sftp://$HOST:$PORT" -e "
+          set sftp:auto-confirm yes; set net:max-retries 2; set net:timeout 20; set cmd:fail-exit yes;
+          cd $SERVER_DIR; bye" || { echo "::error::Ordner $SERVER_DIR nicht gefunden."; exit 1; }
+
+      - name: Inhalt von www zählen
+        run: |
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "sftp://$HOST:$PORT" -e "
+          set sftp:auto-confirm yes; set net:max-retries 2; set net:timeout 20;
+          cls -1 $SERVER_DIR/; bye" > liste.txt
+          echo "Einträge in $SERVER_DIR: $(wc -l < liste.txt)"
+          grep -qiE '(^|/)index\.(html?|php)$' liste.txt && echo "Startseite (index) vorhanden" || echo "Keine index-Datei gefunden"
+          rm -f liste.txt
