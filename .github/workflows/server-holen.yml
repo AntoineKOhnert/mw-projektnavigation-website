@@ -34,7 +34,7 @@ jobs:
           set sftp:auto-confirm yes; set net:max-retries 3;
           mirror --parallel=4 --no-empty-dirs \
             --include-glob *.html --include-glob *.htm --include-glob *.css --include-glob *.js \
-            --include-glob *.xml --include-glob *.txt --include-glob .htaccess --include-glob *.webmanifest \
+            --include-glob *.xml --include-glob *.txt --include-glob .htaccess --include-glob *.webmanifest --include-glob *.webp --include-glob *.svg --include-glob *.png --include-glob *.jpg --include-glob *.ico \
             --exclude-glob cgi-bin/ www/ stand/www/;
           find www > stand/dateiliste-roh.txt;
           bye" || true
