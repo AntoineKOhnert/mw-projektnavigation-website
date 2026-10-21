@@ -1,0 +1,54 @@
+name: Server-Stand ins Repo holen
+
+# Lädt die öffentlichen Webdateien aus www (HTML, CSS, JS, XML, TXT, .htaccess) herunter
+# und legt sie auf dem Branch "server-stand" ab. Dazu eine Liste aller Dateien mit Größe.
+# PHP- und Konfigurationsdateien werden bewusst NICHT geholt (können Zugangsdaten enthalten).
+# Ändert nichts auf dem Server.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/server-holen.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  holen:
+    runs-on: ubuntu-latest
+    env:
+      FTP_SERVER: ${{ secrets.FTP_SERVER }}
+      FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      FTP_PORT: ${{ secrets.FTP_PORT }}
+    steps:
+      - name: lftp installieren
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Dateien holen
+        run: |
+          HOST="${FTP_SERVER#sftp://}"; HOST="${HOST#ftp://}"; HOST="${HOST%/}"; HOST="${HOST%%:*}"
+          PORT="${FTP_PORT:-22}"
+          mkdir -p stand/www
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "sftp://$HOST:$PORT" -e "
+          set sftp:auto-confirm yes; set net:max-retries 3;
+          mirror --parallel=4 --no-empty-dirs \
+            --include-glob *.html --include-glob *.htm --include-glob *.css --include-glob *.js \
+            --include-glob *.xml --include-glob *.txt --include-glob .htaccess --include-glob *.webmanifest \
+            --exclude-glob cgi-bin/ www/ stand/www/;
+          find www > stand/dateiliste-roh.txt;
+          bye" || true
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "sftp://$HOST:$PORT" -e "
+          set sftp:auto-confirm yes; cls -lR --sort=name www/; bye" > stand/dateiliste.txt 2>&1 || true
+          rm -f stand/dateiliste-roh.txt
+          find stand -type f | wc -l
+
+      - name: Auf Branch server-stand ablegen
+        run: |
+          cd stand
+          git init -q -b server-stand
+          git config user.name "Server-Stand"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -qm "Stand von www vom $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" server-stand
