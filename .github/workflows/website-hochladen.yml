@@ -1,0 +1,73 @@
+name: Website hochladen
+
+# Bei jeder Änderung in www/ auf main: prüfen, per SFTP nach www/ auf dem Server laden, live testen.
+# Auf dem Server wird nichts gelöscht. Ist die Seite nach dem Upload nicht erreichbar,
+# wird automatisch eine Not-.htaccess hochgeladen und der Lauf schlägt fehl.
+on:
+  push:
+    branches: [main]
+    paths: ['www/**', 'tools/**', '.github/workflows/website-hochladen.yml']
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+env:
+  SERVER_DIR: www
+  DOMAIN: mw-projekt-navigation.com
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    env:
+      FTP_SERVER: ${{ secrets.FTP_SERVER }}
+      FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      FTP_PORT: ${{ secrets.FTP_PORT }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Changelog-Pflicht
+        if: github.event_name == 'push'
+        env:
+          VORHER: ${{ github.event.before }}
+          NACHHER: ${{ github.sha }}
+        run: |
+          if [ -z "$VORHER" ] || ! git cat-file -e "$VORHER" 2>/dev/null; then echo "Kein Vergleichsstand."; exit 0; fi
+          if git diff --name-only "$VORHER" "$NACHHER" | grep -q '^www/'; then
+            git diff --name-only "$VORHER" "$NACHHER" | grep -qx 'docs/changelog.md' || { echo "::error::www/ geändert, aber kein Eintrag in docs/changelog.md."; exit 1; }
+          fi
+
+      - name: Seiten prüfen
+        run: python3 tools/seo.py --check
+
+      - name: lftp installieren
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Per SFTP hochladen
+        run: |
+          HOST="${FTP_SERVER#sftp://}"; HOST="${HOST#ftp://}"; HOST="${HOST%/}"; HOST="${HOST%%:*}"
+          PORT="${FTP_PORT:-22}"
+          echo "HOST=$HOST" >> "$GITHUB_ENV"; echo "PORT=$PORT" >> "$GITHUB_ENV"
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "sftp://$HOST:$PORT" -e "
+          set sftp:auto-confirm yes; set net:max-retries 3; set cmd:fail-exit yes;
+          mirror -R --verbose=1 --parallel=4 www/ $SERVER_DIR/;
+          bye"
+
+      - name: Live testen (bei Fehler Not-.htaccess hochladen)
+        run: |
+          sleep 5
+          ok=1
+          c=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 https://$DOMAIN/); echo "Startseite: $c"; [ "$c" = 200 ] || ok=0
+          c=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 https://$DOMAIN/projektsteuerung-aerztezentrum); echo "Ärztezentrum: $c"; [ "$c" = 200 ] || ok=0
+          c=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 https://$DOMAIN/leistungen); echo "Leistungen: $c"; [ "$c" = 200 ] || ok=0
+          r=$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' --max-time 20 https://www.$DOMAIN/); echo "www: $r"
+          r=$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' --max-time 20 http://$DOMAIN/); echo "http: $r"
+          if [ $ok = 0 ]; then
+            echo "::error::Seite nach dem Upload nicht erreichbar. Not-.htaccess wird hochgeladen."
+            lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "sftp://$HOST:$PORT" -e "set sftp:auto-confirm yes; put tools/notfall.htaccess -o $SERVER_DIR/.htaccess; bye"
+            exit 1
+          fi

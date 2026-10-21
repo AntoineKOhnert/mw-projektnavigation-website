@@ -1,0 +1,123 @@
+{
+  "domain": "https://mw-projekt-navigation.com",
+  "firma": {
+    "name": "MW Projekt Navigation",
+    "legalName": "MW Projekt Navigation GmbH",
+    "telefon": "+49 172 4500271",
+    "email": "info@mw-projekt-navigation.com",
+    "strasse": "Linnicher Straße 48",
+    "plz": "50933",
+    "ort": "Köln",
+    "land": "DE",
+    "ustid": "DE464143476",
+    "register": "HRB 128484, Amtsgericht Köln",
+    "geschaeftsfuehrung": [
+      "Maximilian F. Lux",
+      "Joachim M. Werno"
+    ],
+    "logo": "/assets/logo-full.svg",
+    "beschreibung": "Projektsteuerung für Ärztezentren, Arztpraxen und Gewerbebau in ganz Deutschland. Ein Ansprechpartner von der Standortprüfung bis zur Übergabe.",
+    "themen": [
+      "Projektsteuerung",
+      "Ärztezentrum",
+      "Praxisplanung",
+      "Arztpraxis bauen",
+      "Gesundheitsimmobilien",
+      "Gewerbebau",
+      "Projektmanagement Bau",
+      "Kostenkontrolle Bau",
+      "Terminsteuerung Bau"
+    ]
+  },
+  "ogBild": "/assets/og-mw-projekt-navigation.jpg",
+  "seiten": [
+    {
+      "datei": "index.html",
+      "pfad": "/",
+      "name": "Startseite",
+      "title": "Projektsteuerung für Ärztezentren | MW Projekt Navigation",
+      "description": "Projektsteuerung für Ärztezentren, Arztpraxen und Gewerbebau in ganz Deutschland. Ein Ansprechpartner von der Standortprüfung bis zur Schlüsselübergabe.",
+      "preloadHero": true,
+      "sitemap": true,
+      "prio": "1.0"
+    },
+    {
+      "datei": "projektsteuerung-aerztezentrum.html",
+      "pfad": "/projektsteuerung-aerztezentrum",
+      "name": "Praxen und Ärztezentren",
+      "title": "Projektsteuerung Ärztezentrum und Arztpraxis | MW",
+      "description": "Ärztezentrum oder Praxis bauen: Wir steuern Standort, Raumprogramm, Hygiene, Genehmigung und Bau. Ein Ansprechpartner, deutschlandweit. Erstgespräch frei.",
+      "service": {
+        "name": "Projektsteuerung für Ärztezentren und Arztpraxen",
+        "typ": "Projektsteuerung Gesundheitsbau"
+      },
+      "sitemap": true,
+      "prio": "0.9"
+    },
+    {
+      "datei": "projektsteuerung-gewerbebau.html",
+      "pfad": "/projektsteuerung-gewerbebau",
+      "name": "Projektsteuerung Gewerbebau",
+      "title": "Projektsteuerung Gewerbebau: Kosten, Termine | MW",
+      "description": "Projektsteuerung für Büro, Handel und Bestand: Wir führen Kosten, Termine, Verträge und alle Beteiligten für Sie. Deutschlandweit, mit einem Ansprechpartner.",
+      "service": {
+        "name": "Projektsteuerung im Gewerbebau",
+        "typ": "Projektsteuerung Gewerbeimmobilien"
+      },
+      "sitemap": true,
+      "prio": "0.9"
+    },
+    {
+      "datei": "leistungen.html",
+      "pfad": "/leistungen",
+      "name": "Leistungsverzeichnis",
+      "title": "Leistungsverzeichnis – MW Projekt Navigation",
+      "description": "Leistungsverzeichnis der MW Projekt Navigation GmbH: Hochbau und Rohbau, Tiefbau, Elektrotechnik, Brandschutz, Ausbaugewerke sowie Kran und Schwerlasttransport.",
+      "sitemap": true,
+      "prio": "0.6"
+    },
+    {
+      "datei": "referenzen.html",
+      "pfad": "/referenzen",
+      "name": "Referenzen",
+      "title": "Referenzen: Ärztezentren und Bauprojekte | MW",
+      "description": "Referenzen der MW Projekt Navigation: Arztquartier Bremen, Ärztezentren in Nürnberg, Fürth, Bayreuth und Speyer, Gewerbeausbau in Frankfurt und mehr.",
+      "sitemap": true,
+      "prio": "0.8"
+    },
+    {
+      "datei": "ueber-uns.html",
+      "pfad": "/ueber-uns",
+      "name": "Über uns",
+      "title": "Über uns – MW Projekt Navigation GmbH",
+      "description": "MW Projekt Navigation GmbH: Projektsteuerung für Gewerbeimmobilien mit Schwerpunkt Gesundheitsbau. Geschäftsführung: Maximilian F. Lux und Joachim M. Werno.",
+      "sitemap": true,
+      "prio": "0.7"
+    },
+    {
+      "datei": "impressum.html",
+      "pfad": "/impressum",
+      "name": "Impressum",
+      "title": "Impressum – MW Projekt Navigation",
+      "description": "Impressum der MW Projekt Navigation GmbH, Linnicher Straße 48, 50933 Köln. Geschäftsführung, Handelsregister, Umsatzsteuer-ID und Kontakt.",
+      "sitemap": false
+    },
+    {
+      "datei": "datenschutz.html",
+      "pfad": "/datenschutz",
+      "name": "Datenschutz",
+      "title": "Datenschutzerklärung – MW Projekt Navigation",
+      "description": "Datenschutzerklärung der MW Projekt Navigation GmbH: welche Daten beim Besuch der Website und bei Anfragen verarbeitet werden und welche Rechte Sie haben.",
+      "sitemap": false
+    },
+    {
+      "datei": "404.html",
+      "pfad": "/404",
+      "name": "Seite nicht gefunden",
+      "title": "Seite nicht gefunden – MW Projekt Navigation",
+      "description": "Diese Seite gibt es nicht. Hier finden Sie zurück zur Startseite, zu unseren Leistungen für Ärztezentren und Gewerbebau und zu den Referenzen.",
+      "noindex": true,
+      "sitemap": false
+    }
+  ]
+}

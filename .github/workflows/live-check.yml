@@ -5,9 +5,9 @@ name: Live-Check Domain
 # Ergebnis landet als Text auf dem Branch "live-check". Ändert nichts auf dem Server.
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: ['.github/workflows/live-check.yml']
+  workflow_run:
+    workflows: ["Website hochladen"]
+    types: [completed]
 
 permissions:
   contents: write
@@ -31,10 +31,11 @@ jobs:
           for u in http://$DOMAIN/ http://www.$DOMAIN/ https://$DOMAIN/ https://www.$DOMAIN/ \
                    https://$DOMAIN/index.html https://$DOMAIN/leistungen https://$DOMAIN/leistungen.html https://$DOMAIN/leistungen/ \
                    https://$DOMAIN/ueber-uns https://$DOMAIN/referenzen https://$DOMAIN/impressum https://$DOMAIN/datenschutz \
+                   https://$DOMAIN/projektsteuerung-aerztezentrum https://$DOMAIN/projektsteuerung-gewerbebau https://$DOMAIN/projektsteuerung-gewerbebau.html https://$DOMAIN/kontakt.php \
                    https://$DOMAIN/robots.txt https://$DOMAIN/sitemap.xml https://$DOMAIN/gibt-es-nicht \
                    https://$DOMAIN/google3271cafb32c8877b.html https://$DOMAIN/htaccess.txt \
                    https://$DOMAIN/assets/logo-full.svg https://$DOMAIN/assets/logo-mark.svg https://$DOMAIN/assets/mw-entwicklung.webp \
-                   https://$DOMAIN/assets/arztquartier-aussen.webp https://$DOMAIN/assets/arztquartier-strasse.webp; do
+                   https://$DOMAIN/assets/arztquartier-aussen.webp https://$DOMAIN/assets/arztquartier-strasse.webp https://$DOMAIN/assets/fonts/inter-var-latin.woff2; do
             echo "=== $u"
             curl -s -o /tmp/b -D /tmp/h -w "Status %{http_code} | Ziel: %{redirect_url} | Zeit: %{time_total}s | TTFB: %{time_starttransfer}s | Größe: %{size_download}\n" --max-time 20 "$u" || echo "Abruf fehlgeschlagen"
             grep -iE '^(server|content-type|strict-transport|x-frame|x-content-type|content-security|referrer-policy|cache-control|content-encoding|expires):' /tmp/h || true

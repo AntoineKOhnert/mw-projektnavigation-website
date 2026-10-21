@@ -1,3 +1,3 @@
 # MW Projekt Navigation – Website
 
-Quellcode der Website. Upload per GitHub Actions auf den united-domains-Webspace (Ordner `www`).
+Quellcode von https://mw-projekt-navigation.com. Upload per GitHub Actions auf den united-domains-Webspace (Ordner `www`). Details in CLAUDE.md.
