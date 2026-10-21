@@ -1,0 +1,83 @@
+name: Live-Check Domain
+
+# Ruft die Domain von außen auf (Weiterleitungen, HTTPS, Seiten, robots, Sitemap, Bilder),
+# lässt Lighthouse für Handy laufen und listet die Dateien in www.
+# Ergebnis landet als Text auf dem Branch "live-check". Ändert nichts auf dem Server.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/live-check.yml']
+
+permissions:
+  contents: write
+
+env:
+  DOMAIN: mw-projekt-navigation.com
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      FTP_SERVER: ${{ secrets.FTP_SERVER }}
+      FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      FTP_PORT: ${{ secrets.FTP_PORT }}
+    steps:
+      - name: Abrufe
+        run: |
+          mkdir -p out; exec > out/abrufe.txt 2>&1
+          echo "A-Record: $(dig +short $DOMAIN A | tail -1)  www: $(dig +short www.$DOMAIN A | tail -1)"
+          for u in http://$DOMAIN/ http://www.$DOMAIN/ https://$DOMAIN/ https://www.$DOMAIN/ \
+                   https://$DOMAIN/index.html https://$DOMAIN/leistungen https://$DOMAIN/leistungen.html https://$DOMAIN/leistungen/ \
+                   https://$DOMAIN/ueber-uns https://$DOMAIN/referenzen https://$DOMAIN/impressum https://$DOMAIN/datenschutz \
+                   https://$DOMAIN/robots.txt https://$DOMAIN/sitemap.xml https://$DOMAIN/gibt-es-nicht \
+                   https://$DOMAIN/google3271cafb32c8877b.html https://$DOMAIN/htaccess.txt \
+                   https://$DOMAIN/assets/logo-full.svg https://$DOMAIN/assets/logo-mark.svg https://$DOMAIN/assets/mw-entwicklung.webp \
+                   https://$DOMAIN/assets/arztquartier-aussen.webp https://$DOMAIN/assets/arztquartier-strasse.webp; do
+            echo "=== $u"
+            curl -s -o /tmp/b -D /tmp/h -w "Status %{http_code} | Ziel: %{redirect_url} | Zeit: %{time_total}s | TTFB: %{time_starttransfer}s | Größe: %{size_download}\n" --max-time 20 "$u" || echo "Abruf fehlgeschlagen"
+            grep -iE '^(server|content-type|strict-transport|x-frame|x-content-type|content-security|referrer-policy|cache-control|content-encoding|expires):' /tmp/h || true
+            head -c 200 /tmp/b | tr '\n' ' '; echo
+          done
+          echo "=== SSL"
+          echo | openssl s_client -connect $DOMAIN:443 -servername $DOMAIN 2>/dev/null | openssl x509 -noout -subject -issuer -dates -ext subjectAltName || echo "kein Zertifikat"
+          echo "=== gzip"
+          curl -s -H 'Accept-Encoding: gzip' -D - -o /dev/null https://$DOMAIN/ | grep -i content-encoding || echo "keine Kompression"
+
+      - name: Dateien in www auflisten
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+          HOST="${FTP_SERVER#sftp://}"; HOST="${HOST#ftp://}"; HOST="${HOST%/}"; HOST="${HOST%%:*}"
+          PORT="${FTP_PORT:-22}"
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "sftp://$HOST:$PORT" -e "
+          set sftp:auto-confirm yes; find -l www/; bye" > out/dateien.txt 2>&1 || true
+
+      - name: Lighthouse (Handy und Desktop)
+        run: |
+          npx --yes lighthouse@12 "https://$DOMAIN/" --output=json --output-path=mobil.json --locale=de --quiet --chrome-flags="--headless=new --no-sandbox" || true
+          npx --yes lighthouse@12 "https://$DOMAIN/" --preset=desktop --output=json --output-path=desktop.json --locale=de --quiet --chrome-flags="--headless=new --no-sandbox" || true
+          node -e '
+          const fs=require("fs"); let o="";
+          for (const f of ["mobil.json","desktop.json"]) {
+            if (!fs.existsSync(f)) { o+=f+": kein Ergebnis\n"; continue; }
+            const r=JSON.parse(fs.readFileSync(f,"utf8"));
+            o+="\n===== "+f+"\n";
+            for (const k of ["largest-contentful-paint","cumulative-layout-shift","total-blocking-time","first-contentful-paint","speed-index","server-response-time"]) if(r.audits[k]) o+=k+": "+r.audits[k].displayValue+"\n";
+            for (const c of Object.values(r.categories)) {
+              o+="\n## "+c.title+": "+(c.score==null?"-":Math.round(c.score*100))+"\n";
+              for (const ref of c.auditRefs) { const a=r.audits[ref.id]; if(!a) continue;
+                if (a.score!==null && a.score<0.9 && !["notApplicable","manual","informative"].includes(a.scoreDisplayMode)) {
+                  o+="- ["+ref.id+"] "+a.title+" | "+(a.displayValue||a.score)+"\n";
+                  for (const it of ((a.details&&a.details.items)||[]).slice(0,3)) o+="    • "+JSON.stringify(it).slice(0,250)+"\n";
+                } }
+            } }
+          fs.writeFileSync("out/lighthouse.txt",o);'
+
+      - name: Auf Branch live-check ablegen
+        run: |
+          cd out
+          git init -q -b live-check
+          git config user.name "Live-Check"; git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A; git commit -qm "Live-Check $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" live-check
