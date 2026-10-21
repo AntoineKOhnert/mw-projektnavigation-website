@@ -7,7 +7,7 @@ CSS = """
   /* Inhaltsseiten (Schwerpunkte) */
   .about h3{font-size:19px;font-weight:700;letter-spacing:-.01em;margin:28px 0 8px}
   .about a{color:var(--orange-dark);font-weight:600}
-  .about a.btn{color:#fff}
+  .about a.btn{color:var(--ink)}
   .about a.btn-ghost{color:var(--ink)}
   .about a.btn-ghost:hover{color:var(--orange-dark)}
   .about ol.phasen{margin:10px 0 18px 0;padding-left:22px}

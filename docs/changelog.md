@@ -18,3 +18,7 @@
 - Startseite: Projektkarte Arztquartier Bremen grau statt schwarz, wie der Kasten "Planung von innen nach außen" auf der Referenzseite. Wunsch von Antoine.
 - PageSpeed Barrierefreiheit (Handy 92): Orange als Textfarbe und auf Buttons dunkler (tools/farben.py, Kontrast nach WCAG AA), Signal-Orange bleibt für Flächen, Icons und im Hero. Menü-Button mit unsichtbarem Text statt unzulässigem aria-label. Phasen-Nummern 01 bis 04 als Deko markiert. Lokal geprüft: Barrierefreiheit, Best Practices und SEO je 100.
 - Navigation bricht auf mittleren Bildschirmbreiten nicht mehr um.
+
+## 2026-10-21 (Buttons wieder im Logo-Orange)
+- Buttons wieder in #FC6820 wie im Logo, Schrift auf den Buttons jetzt dunkel statt weiß (Kontrast 6:1, Barrierefreiheit bleibt 100). Hover #E2541A. Wunsch von Antoine.
+- Kleine orange Texte (Eyebrows, Links, Tags) bleiben im dunkleren Text-Orange #B9430B, weil helles Orange als Schrift auf Weiß durch den Kontrast-Test fällt.
