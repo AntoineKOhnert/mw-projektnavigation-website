@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutzerklärung – MW Projekt Navigation</title>
+<link rel="icon" type="image/svg+xml" href="/assets/logo-full.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--orange:#FC6820;--orange-dark:#E2541A;--ink:#191818;--ink-soft:#5C5856;--cream:#F5F5F4;--line:#E2E2E1}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink);background:#fff;line-height:1.7;font-size:16.5px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 28px}
+  header{border-bottom:1px solid var(--line);background:#fff}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:76px;max-width:1140px;margin:0 auto;padding:0 28px}
+  .brand{display:flex;align-items:center;gap:13px}
+  .brand img{height:40px;width:auto}
+  .brand b{font-family:'Inter',sans-serif;font-weight:500;font-size:21px}
+  .back{font-size:15px;color:var(--ink-soft);text-decoration:none}
+  .back:hover{color:var(--orange)}
+  main{padding:70px 0 90px}
+  h1{font-family:'Inter',sans-serif;font-weight:600;letter-spacing:-.02em;font-size:clamp(32px,5vw,46px);margin-bottom:10px}
+  .lead{color:var(--ink-soft);margin-bottom:36px}
+  h2{font-family:'Inter',sans-serif;font-weight:500;font-size:21px;margin:36px 0 10px}
+  p{margin-bottom:13px}
+  ul{margin:0 0 14px 22px}
+  li{margin-bottom:6px}
+  a{color:var(--orange-dark)}
+  .flag{background:#fbe9d8;color:#9a4e12;padding:1px 6px;border-radius:4px;font-size:.95em}
+  .stand{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:var(--ink-soft);font-size:15px}
+  footer{border-top:1px solid var(--line);background:var(--cream);padding:30px 0;font-size:14px;color:var(--ink-soft)}
+  footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  footer a{color:var(--ink-soft);text-decoration:none;margin-left:20px}
+  footer a:hover{color:var(--orange)}
+  @media(max-width:560px){
+    .brand b{display:flex;flex-direction:column;line-height:1.08;font-size:19px}
+  }
+  /* Header-Navigation */
+  header{position:sticky;top:0;z-index:50}
+  nav ul{display:flex;align-items:center;gap:24px;list-style:none;margin:0}
+  nav ul a{font-size:15px;font-weight:500;color:var(--ink-soft);text-decoration:none;transition:.2s}
+  nav ul a:hover{color:var(--orange)}
+  .nav-cta{margin-left:4px}
+  .btn{display:inline-block;background:var(--orange);color:#fff;font-weight:600;font-size:15px;padding:12px 22px;border-radius:999px;text-decoration:none;transition:.2s;border:none;cursor:pointer}
+  .btn:hover{background:var(--orange-dark)}
+  .menu-toggle{display:none}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--ink);transition:.3s}
+  /* Anfrage-Sektion */
+  .anfrage-section{background:var(--cream);border-top:1px solid var(--line);padding:64px 0}
+  .anfrage-section .wrap{max-width:620px}
+  .anfrage-section .eyebrow{display:block;font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+  .anfrage-section h2{margin:0 0 8px}
+  .anfrage-section .a-sub{color:var(--ink-soft);margin-bottom:22px}
+  .anfrage-form{background:#fff;border:1px solid var(--line);border-radius:18px;padding:32px;box-shadow:0 30px 70px -50px rgba(25,24,24,.4)}
+  .anfrage-form label{display:block;font-size:14px;font-weight:600;margin:0 0 7px}
+  .anfrage-form .field{margin-bottom:18px}
+  .anfrage-form input,.anfrage-form textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:13px 15px;font-family:inherit;font-size:15px;background:var(--cream);transition:.2s}
+  .anfrage-form input:focus,.anfrage-form textarea:focus{outline:none;border-color:var(--orange);background:#fff}
+  .anfrage-form textarea{min-height:110px;resize:vertical}
+  .checks{display:grid;grid-template-columns:1fr 1fr;gap:11px 20px;margin-top:6px}
+  .checks .chk{display:flex;align-items:center;gap:9px;font-size:14.5px;font-weight:500;cursor:pointer}
+  .checks .chk input{width:18px;height:18px;accent-color:var(--orange);flex:none;cursor:pointer}
+  .hint{font-size:12.5px;color:var(--ink-soft);margin-top:14px}
+  @media(max-width:920px){
+    nav ul{position:fixed;inset:76px 0 auto 0;background:#fff;flex-direction:column;gap:0;padding:10px 0;border-bottom:1px solid var(--line);transform:translateY(-135%);transition:.35s;opacity:0}
+    nav ul li{width:100%}
+    nav ul a{display:block;padding:15px 28px}
+    .nav-cta{margin:14px 28px}
+    .menu-toggle:checked ~ ul{transform:translateY(0);opacity:1}
+    .burger{display:flex}
+  }
+  @media(max-width:560px){
+    .checks{grid-template-columns:1fr}
+  }
+  .hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .form-status{margin-top:12px;font-size:14.5px;font-weight:500;line-height:1.5}
+  .form-status:empty{display:none}
+  .form-status.ok{color:#1f6b35;background:#eaf6ee;border-radius:10px;padding:12px 14px}
+  .form-status.err{color:#8E1616;background:#fbeaea;border-radius:10px;padding:12px 14px}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="/" class="brand" aria-label="MW Projekt Navigation"><img src="/assets/logo-mark.svg" alt="MW Projekt Navigation"><b><span>Projekt</span> <span>Navigation</span></b></a>
+    <nav>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
+      <label for="menu-toggle" class="burger" aria-label="Menü"><span></span><span></span><span></span></label>
+      <ul>
+        <li><a href="/ueber-uns">Über uns</a></li>
+        <li><a href="/#weg">Der Weg</a></li>
+        <li><a href="/#kontakt">Kontakt</a></li>
+        <li><a href="#anfrage">Anfrage</a></li>
+        <li><a href="/leistungen">Leistungen</a></li>
+        <li><a href="/referenzen">Referenzen</a></li>
+        <li class="nav-cta"><a href="#anfrage" class="btn">Erstgespräch</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Datenschutzerklärung</h1>
+    <p class="lead">Informationen zu Art, Umfang und Zweck der Verarbeitung personenbezogener Daten beim Besuch unserer Website.</p>
+
+    <h2>1. Verantwortlicher</h2>
+    <p>MW Projekt Navigation GmbH<br>
+    Linnicher Straße 48<br>
+    50933 Köln<br>
+    Deutschland</p>
+    <p>Telefon: <a href="tel:+491724500271">+49 172 4500271</a><br>
+    E-Mail: <a href="mailto:info@mw-projekt-navigation.com">info@mw-projekt-navigation.com</a><br>
+    Website: www.mw-projekt-navigation.com</p>
+    <p>Vertreten durch: Maximilian F. Lux und Joachim M. Werno (Geschäftsführung)</p>
+
+    <h2>2. Allgemeines zur Datenverarbeitung</h2>
+    <p>Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Ihre personenbezogenen Daten werden vertraulich und gemäß den gesetzlichen Datenschutzvorschriften, insbesondere der Datenschutz-Grundverordnung (DSGVO) und des Bundesdatenschutzgesetzes (BDSG), verarbeitet. Diese Datenschutzerklärung informiert Sie über Art, Umfang und Zweck der Verarbeitung personenbezogener Daten beim Besuch unserer Website.</p>
+
+    <h2>3. Datenerfassung beim Besuch unserer Website (Server-Logfiles)</h2>
+    <p>Beim Aufruf unserer Website werden automatisch Informationen erfasst, die Ihr Browser übermittelt. Diese Daten werden temporär in sogenannten Logfiles gespeichert:</p>
+    <ul>
+      <li>IP-Adresse (anonymisiert)</li>
+      <li>Datum und Uhrzeit des Zugriffs</li>
+      <li>Browsertyp und -version</li>
+      <li>Betriebssystem</li>
+      <li>Referrer-URL (zuvor besuchte Seite)</li>
+      <li>Hostname des zugreifenden Rechners</li>
+    </ul>
+    <p>Unsere Website wird bei folgendem Hosting-Dienstleister betrieben, der die genannten Daten in unserem Auftrag verarbeitet:</p>
+    <p>united-domains GmbH<br>
+    Gautinger Straße 10<br>
+    82319 Starnberg<br>
+    Deutschland</p>
+    <p>Die Server befinden sich in Deutschland. Mit dem Anbieter besteht ein Vertrag zur Auftragsverarbeitung gemäß Art. 28 DSGVO. Die Verarbeitung erfolgt gemäß Art. 6 Abs. 1 lit. f DSGVO auf Grundlage unseres berechtigten Interesses an der technischen Sicherheit und Stabilität der Website.</p>
+
+    <h2>4. Verwendung von Cookies</h2>
+    <p>Unsere Website setzt nur technisch notwendige Cookies ein, die für den Betrieb und die Darstellung der Seite erforderlich sind. Wir verwenden keine Analyse-, Tracking- oder Marketing-Cookies.</p>
+    <p>Rechtsgrundlage für technisch notwendige Cookies ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer funktionalen Darstellung); soweit eine Einwilligung erforderlich ist, Art. 6 Abs. 1 lit. a DSGVO. Sie können Cookies jederzeit über die Einstellungen Ihres Browsers verwalten oder löschen.</p>
+
+    <h2>5. Kontaktformular und E-Mail-Kontakt</h2>
+    <p>Wenn Sie uns über ein Formular oder per E-Mail kontaktieren, werden Ihre Angaben (Name, E-Mail-Adresse, Telefonnummer, Anliegen) verarbeitet, um Ihre Anfrage zu bearbeiten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahme) oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Kommunikation). Ihre Daten werden gelöscht, sobald die Anfrage abgeschlossen ist und keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
+
+    <h2>6. Einbindung von Google Fonts</h2>
+    <p>Unsere Website verwendet Google Fonts zur einheitlichen Darstellung von Schriftarten. Anbieter ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Beim Aufruf der Website lädt Ihr Browser die benötigten Schriftarten; dabei kann Ihre IP-Adresse an Google übermittelt werden. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer ansprechenden Darstellung). Google ist unter dem EU-U.S. Data Privacy Framework zertifiziert. Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>.</p>
+
+    <h2>7. Datensicherheit</h2>
+    <p>Wir treffen technische und organisatorische Sicherheitsmaßnahmen, um Ihre Daten gegen unbefugten Zugriff, Verlust oder Manipulation zu schützen. Unsere Website verwendet eine SSL-/TLS-Verschlüsselung (https://), um Ihre Daten sicher zu übertragen.</p>
+
+    <h2>8. Dauer der Speicherung</h2>
+    <p>Personenbezogene Daten werden nur so lange gespeichert, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungsfristen bestehen. Nach Wegfall des Zwecks oder Ablauf der Frist werden die Daten gelöscht oder anonymisiert.</p>
+
+    <h2>9. Ihre Rechte</h2>
+    <p>Sie haben folgende Rechte nach der DSGVO:</p>
+    <ul>
+      <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+      <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+      <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+      <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+      <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+      <li>Recht auf Widerspruch (Art. 21 DSGVO)</li>
+      <li>Recht auf Beschwerde bei einer Datenschutzaufsichtsbehörde (Art. 77 DSGVO)</li>
+    </ul>
+    <p>Zuständige Aufsichtsbehörde: Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW), Kavalleriestraße 2–4, 40213 Düsseldorf, <a href="https://www.ldi.nrw.de" target="_blank" rel="noopener">www.ldi.nrw.de</a>.</p>
+
+    <h2>10. Änderungen dieser Datenschutzerklärung</h2>
+    <p>Wir behalten uns vor, diese Datenschutzerklärung bei technischen Änderungen oder neuen gesetzlichen Anforderungen anzupassen. Die jeweils aktuelle Version ist jederzeit auf unserer Website abrufbar.</p>
+
+    <p class="stand">Stand: August 2026 · MW Projekt Navigation GmbH, Linnicher Straße 48, 50933 Köln</p>
+  </div>
+</main>
+
+<section id="anfrage" class="anfrage-section">
+  <div class="wrap">
+    <span class="eyebrow">Anfrage</span>
+    <h2>Senden Sie uns Ihre Anfrage</h2>
+    <p class="a-sub">Name, Telefon und E-Mail genügen. Wir melden uns zeitnah bei Ihnen.</p>
+    <form class="anfrage-form" action="/kontakt.php" method="post" onsubmit="return mwSubmit(event,this)">
+        <input type="hidden" name="formular" value="Anfrage">
+        <div class="hp" aria-hidden="true"><label>Bitte leer lassen<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+      <div class="field"><label for="a-name">Name *</label><input id="a-name" name="name" type="text" autocomplete="name" required placeholder="Ihr Name"></div>
+      <div class="field"><label for="a-tel">Telefonnummer *</label><input id="a-tel" name="telefon" type="tel" autocomplete="tel" required placeholder="Ihre Telefonnummer"></div>
+      <div class="field"><label for="a-mail">E-Mail *</label><input id="a-mail" name="email" type="email" autocomplete="email" required placeholder="ihre@adresse.de"></div>
+      <div class="field">
+        <label>Worum geht es? (Mehrfachauswahl möglich)</label>
+        <div class="checks">
+          <label class="chk"><input type="checkbox" name="interesse[]" value="Praxis / Ärztezentrum"> Praxis / Ärztezentrum</label>
+          <label class="chk"><input type="checkbox" name="interesse[]" value="Bau- / Projektsteuerung"> Bau- / Projektsteuerung</label>
+          <label class="chk"><input type="checkbox" name="interesse[]" value="Umbau / Sanierung"> Umbau / Sanierung</label>
+          <label class="chk"><input type="checkbox" name="interesse[]" value="Beratung / Erstgespräch"> Beratung / Erstgespräch</label>
+          <label class="chk"><input type="checkbox" name="interesse[]" value="Sonstiges"> Sonstiges</label>
+        </div>
+      </div>
+      <div class="field"><label for="a-msg">Nachricht (optional)</label><textarea id="a-msg" name="nachricht" placeholder="Kurz zu Ihrem Vorhaben ..."></textarea></div>
+      <button type="submit" class="btn" style="width:100%">Anfrage senden</button>
+      <p class="hint">Ihre Angaben nutzen wir ausschließlich zur Bearbeitung Ihrer Anfrage. Details in der <a href="/datenschutz">Datenschutzerklärung</a>.</p>
+        <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 MW Projekt Navigation</span>
+    <span><a href="/">Startseite</a><a href="/impressum">Impressum</a></span>
+  </div>
+</footer>
+
+<script>
+  function mwSubmit(e,f){
+    if(!window.fetch||!window.FormData) return true;
+    e.preventDefault();
+    var st=f.querySelector('.form-status'), b=f.querySelector('button[type=submit]'), t=b.textContent;
+    b.disabled=true; b.textContent='Wird gesendet …';
+    if(st){st.className='form-status';st.textContent='';}
+    fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
+      .then(function(r){return r.json();})
+      .then(function(d){if(st){st.textContent=d.message;st.className='form-status '+(d.ok?'ok':'err');} if(d.ok) f.reset();})
+      .catch(function(){if(st){st.textContent='Das hat leider nicht geklappt. Bitte schreiben Sie uns direkt an info@mw-projekt-navigation.com oder rufen Sie an: +49 172 45 00 271.';st.className='form-status err';}})
+      .then(function(){b.disabled=false;b.textContent=t;});
+    return false;
+  }
+  document.querySelectorAll('nav ul a').forEach(function(a){
+    a.addEventListener('click',function(){var t=document.getElementById('menu-toggle');if(t)t.checked=false;});
+  });
+</script>
+</body>
+</html>
